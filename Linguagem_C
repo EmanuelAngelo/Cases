@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <string.h>
+#include <locale.h>
+
+#define ZERO 0  //variavel nunca ira mudar o valor
+
+main () {
+
+  struct empresa {
+    char nome_empresa[100];
+    char lugar_empresa[100];
+    int  cod_empresa=1001;
+  };
+  struct empresa empresa1[5];
+    int i, escolha, tamanho;
+  setlocale(LC_ALL, "Portuguese");
+  printf("             SE FOR SUA PRIMEIRA VEZ NO PROGRAMA, ENTÃO CADASTRE UM HOTEL\n\n"); // partida de escolha, essa primeira fase irei del.
+
+
+  while(escolha != ZERO) {//Enquanto não digitar zero, repete isso tudo
+    printf("Digite uma das escolhas abaixo: \n\n1- Verificar todos Hoteis Cadastrados. \n2- Buscar por posição de Cadastro e nao Codigo do Castro. \n3- Castrar Hotel, no Caso serao 5 hoteis ha ser cadastrados.\n0- Digite para sair.");
+    printf("\n\nEscolha ha opção: ");
+    scanf("%d",&escolha);
+    system("cls");
+    switch ( escolha ) {
+
+    case 0:
+      printf("\n\n|:::::::::::::: SAIR ::::::::::::::| \n\n"); // apos digitar 0 ele sai do programa
+      break;
+    case 1:
+      printf("\n\n|******* Empresas que foram cadastradas *******| \n\n"); // mostra as empresas que foram cadastradas
+      	for(i=ZERO; i<5; i++) {
+    printf("Posição de cadastro para pesquisa é: %i\n",i+1);
+    printf("Nome da Empresa: %s\n",empresa1[i].nome_empresa);
+    printf("Local da Empresa: %s\n",empresa1[i].lugar_empresa);
+    printf("Codigo da Empresa %i\n\n",i+empresa1[i].cod_empresa);
+      }
+      break;
+    case 2:
+    printf("**** Buscar Hotel pelo Numero de Inscrição ****\n");  //busca hoteis cadastrados pela posição de cadastro
+    printf("\nDigite Numero de Cadastro do Hotel: ");
+      scanf("%d", &empresa1[i].cod_empresa);
+    printf("Posição de cadastro para pesquisa é: %i \n",i+1);
+    printf("Codigo da Empresa %i\n\n",i+empresa1[i].cod_empresa);  //soma valor de j+ o cod_empresa 1001+1 ..
+    printf("Nome do Hotel: %s\n",empresa1[ i ].nome_empresa);
+    printf("Local do Hotel: %s\n",empresa1[ i ].lugar_empresa);
+      break;
+    case 3:
+      	for(i=ZERO; i<tamanho; i++) {
+      		printf("Quantos cadastro ira querer fazer ?: ");
+      		scanf("%d",)
+
+        printf("                    Cadastro de Hoteis                    \n\n");
+    printf("Codigo do Hotel %i\n\n",i+empresa1[i].cod_empresa);  //soma valor de i+ o cod_empresa 1001+1 ..
+    printf("Digite Nome do %iº Hotel: \n",i+1);
+        fflush(stdin);
+        gets(empresa1[i].nome_empresa);	//armazena em cada posição do vetor
+    printf("Digite Local do Hotel: \n");
+        fflush(stdin);
+        gets(empresa1[i].lugar_empresa); //armazena em cada posição do vetor
+        system("cls");
+	  }
+      break;
+    default :
+      printf ("Valor Inserido invalido!\n");
+    }//fim switch
+  } //fim while
+
+
+  return ZERO;
+}
